@@ -31,3 +31,43 @@ print ("Lista após adicionar6:", my_list)
 # - Desloca elementos existentes para a direita 
 my_lyst. insert (2, 7)
 print("Lista após inserir 7 na posição 2", my_list)
+
+# Removendo a primeira ocorrência de um elemento 
+print("Último elemento:", array[-1])
+
+my_list.remove(4)
+print("Lista após remover o valor 4:", my_list)
+
+# Tuplas (estrutura imutável de elementos)
+# Criando uma tupla - usa parênteses ao invés de colchetes
+my_tuple = (1, 2, 3, 4, 5)
+print("Tupla:", my_tuple)
+
+# Acesso a elementos funciona igual às listas
+print("Primeiro elemento da tupla:", my_tuple[0])
+print("Último elemento da tupla:", my_tuple[-1])
+
+# Loops (estruturas de repetição)
+
+# Loop for interando sobre elementos de uma lista 
+fruits = ["maça", "banana", "morango"]
+print("Frutas na lista:")
+for fruit in fruits:
+    print(fruit)
+
+# Loop while executando enquanto condição é verdadeira 
+print("Contagem de 0 a 4:")
+i = 0
+while i < 5:
+    print(i)
+    i+=1 #Incrementa o contador
+
+# Loop for com acesso ao índice e elemento simultaneamente usando enumerate
+print("Elementos da lista com seus índices:")
+my_list = [1, 2, 3, 4, 5]
+for indice, elemento in enumarate(my_list):
+    print(f"Índice {indice}: {elemento}")
+
+#python 
+# Importa o módulo random para seleção aleatória de palavras
+import random
