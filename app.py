@@ -194,3 +194,51 @@ def player_move(icon):
 def is_victory(icon)
     """
     Verifica se o jogador atual venceu
+
+ :param icon: 'X' ou 'O' - símbolo a ser verificado
+    :return: True se houver vitória, False caso contrário
+    """
+    # Verifica todas as combinações vencedoras possíveis
+    return (
+        # Vitórias horizontais
+        (board[0] == icon and board[1] == icon and board[2] == icon) or
+        (board[3] == icon and board[4] == icon and board[5] == icon) or
+        (board[6] == icon and board[7] == icon and board[8] == icon) or
+        
+        # Vitórias verticais
+        (board[0] == icon and board[3] == icon and board[6] == icon) or
+        (board[1] == icon and board[4] == icon and board[7] == icon) or
+        (board[2] == icon and board[5] == icon and board[8] == icon) or
+        
+print("Último elemento:", array[-1])
+
+        # Vitórias diagonais
+        (board[0] == icon and board[4] == icon and board[8] == icon) or
+        (board[2] == icon and board[4] == icon and board[6] == icon)
+    )
+
+# Loop principal do jogo
+while True:
+    # Jogador X (1) faz sua jogada
+    print_board()
+    player_move('X')
+    
+    # Verifica vitória do X ou empate
+    if is_victory('X'):
+        print_board()
+        print("Jogador 1 (X) venceu! Parabéns!")
+        break
+    elif ' ' not in board:  # Todas posições preenchidas
+        print_board()
+        print("Empate!")
+        break
+    
+    # Jogador O (2) faz sua jogada
+    print_board()
+    player_move('O')
+    
+    # Verifica vitória do O
+    if is_victory('O'):
+        print_board()
+        print("Jogador 2 (O) venceu! Parabéns!")
+        break
